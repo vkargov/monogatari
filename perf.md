@@ -1,3 +1,5 @@
+Gathering perf
+==
 perf reads jit symbol info from /tmp/perf-... If you profile large builds like the one that Mono has it's a problem because PIDs get wrapped and the performance data gets lost.
 
 To fix this you need to increase `/proc/sys/kernel/pid_max` (works only on 64-bit, on 32 bits you're stuck with 32768)
@@ -11,3 +13,18 @@ Show the actual thing.
 ```
 perf report
 ```
+
+Some basic perf 🐻ings
+==
+
+record
+---
+
+* `perf_evlist__prepare_workload` forks out the command we'll be profiling and starts waiting on a "cork" fd
+
+* `perf_session__write_header` writes header
+
+* `record__synthesize` writes system info like mmap and modules (?)
+
+* `perf_evlist__start_workload` signals the waiting child to start the process we wanted to profile.
+
