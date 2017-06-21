@@ -28,3 +28,8 @@ record
 
 * `perf_evlist__start_workload` signals the waiting child to start the process we wanted to profile.
 
+* `perf_event_output` kernel side event recording
+
+* `_unwind__get_entries` does unwinding
+
+`perf inject --jit`?
