@@ -32,4 +32,8 @@ record
 
 * `_unwind__get_entries` does unwinding
 
+* `get_entries` @ `unwind-libunwind-local.c` main unwinding loop
+
+Misc
+---
 `perf inject --jit`?
