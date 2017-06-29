@@ -38,3 +38,4 @@ Misc
 ---
 The way V8 handles it: https://github.com/v8/v8/wiki/V8-Linux-perf-Integration
 `perf inject --jit`?
+Patch: https://lkml.org/lkml/2015/2/10/568
