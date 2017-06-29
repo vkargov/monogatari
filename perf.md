@@ -6,7 +6,7 @@ To fix this you need to increase `/proc/sys/kernel/pid_max` (works only on 64-bi
 
 Record with call graph information. (without it it looks like a flat eeeew)
 ```
-perf record -g mono --jitmap ...
+MONO_DEBUG=disable_omit_fp perf record -g mono --jitmap ...
 ```
 
 Show the actual thing.
