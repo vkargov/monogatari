@@ -8,6 +8,7 @@ Record with call graph information. (without it it looks like a flat eeeew)
 ```
 MONO_DEBUG=disable_omit_fp MONO_ENV_OPTIONS=--jitmap perf record -g mono ...
 ```
+for the whole mono build reducing the profiling frequency down to `-F 50` is a good idea for an 8Gb machine, otherwise `prof report` may run out of memory.
 
 High level view:
 ```
@@ -19,7 +20,7 @@ Normal view:
 perf report
 ```
 
-There is an unsolved issue that --call-graph dwarf does not play well with the /tmp/perf\* files generated for JIT which makes the report less pretty than desired, but it should still have enough information to perform analysis with it.
+There is an unsolved issue that `--call-graph dwarf` does not play well with the `/tmp/perf\*` files generated JITted code which forces one to use the default `fp` unwinder instead. That makes the report less pretty than desired (and breaks libc traces in particular), but it should still have enough information to perform analysis with a trace obtained like that.
 
 Current build
 ==
@@ -35,7 +36,8 @@ Tool breakdown
 * 0.5% grep
 * 0.5% install
 * 5.8% kernel+other
-
+Mono breakdown
+--
 
 
 Some miscellaneous source code bearings
