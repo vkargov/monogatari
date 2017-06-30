@@ -24,6 +24,7 @@ There is an unsolved issue that `--call-graph dwarf` does not play well with the
 
 Current build
 ==
+
 Tool breakdown
 --
 * 67.8% mono
@@ -36,32 +37,26 @@ Tool breakdown
 * 0.5% grep
 * 0.5% install
 * 5.8% kernel+other
+
 Mono breakdown
 --
 
 
-Some miscellaneous source code bearings
+
+Miscellanea
 ==
-
-record
----
-
+Some basic perf source code bearings
+--
 * `perf_evlist__prepare_workload` forks out the command we'll be profiling and starts waiting on a "cork" fd
-
 * `perf_session__write_header` writes header
-
 * `record__synthesize` writes system info like mmap and modules (?)
-
 * `perf_evlist__start_workload` signals the waiting child to start the process we wanted to profile.
-
 * `perf_event_output` kernel side event recording
-
 * `_unwind__get_entries` does unwinding
-
 * `get_entries` @ `unwind-libunwind-local.c` main unwinding loop
 
 Misc
----
+--
 debugging perf data: `perf report -D`
 
 The way V8 handles it: https://github.com/v8/v8/wiki/V8-Linux-perf-Integration
