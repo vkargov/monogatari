@@ -6,15 +6,23 @@ To fix this you need to increase `/proc/sys/kernel/pid_max` (works only on 64-bi
 
 Record with call graph information. (without it it looks like a flat eeeew)
 ```
-MONO_DEBUG=disable_omit_fp perf record -g mono --jitmap ...
+MONO_DEBUG=disable_omit_fp MONO_ENV_OPTIONS=--jitmap perf record -g mono ...
 ```
 
-Show the actual thing.
+High level view:
 ```
 perf report --hierarchy
 ```
 
-Some basic perf 🐻ings
+Normal view:
+```
+perf report
+```
+
+There is an unsolved issue that --call-graph dwarf does not play well with the /tmp/perf\* files generated for JIT which makes the report less pretty than desired, but it should still have enough information to perform analysis with it.
+
+
+Some miscellaneous source code bearings
 ==
 
 record
