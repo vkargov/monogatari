@@ -21,6 +21,22 @@ perf report
 
 There is an unsolved issue that --call-graph dwarf does not play well with the /tmp/perf\* files generated for JIT which makes the report less pretty than desired, but it should still have enough information to perform analysis with it.
 
+Current build
+==
+Tool breakdown
+--
+* 67.8% mono
+* 7.6% cc
+* 6.9% libtool
+* 5.5% make
+* 2.6% bash
+* 2.3% as
+* 0.5% cmake
+* 0.5% grep
+* 0.5% install
+* 5.8% kernel+other
+
+
 
 Some miscellaneous source code bearings
 ==
