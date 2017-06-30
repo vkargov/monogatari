@@ -11,7 +11,7 @@ MONO_DEBUG=disable_omit_fp perf record -g mono --jitmap ...
 
 Show the actual thing.
 ```
-perf report
+perf report --hierarchy
 ```
 
 Some basic perf 🐻ings
