@@ -4,10 +4,12 @@ perf reads jit symbol info from /tmp/perf-... If you profile large builds like t
 
 To fix this you need to increase `/proc/sys/kernel/pid_max` (works only on 64-bit, on 32 bits you're stuck with 32768)
 
-Record with call graph information. (without it it looks like a flat eeeew)
+Record with call graph information.
 ```
 MONO_DEBUG=disable_omit_fp MONO_ENV_OPTIONS=--jitmap perf record -g mono ...
 ```
+We use the default `-g` unwinder (`fp`) because `--call-graph dwarf` does not play well with the `/tmp/perf\*` files generated JITted code. That makes the report less pretty than desired (and breaks libc traces in particular), but it should still have enough information to perform analysis with a trace obtained like that.
+
 for the whole mono build reducing the profiling frequency down to `-F 50` is a good idea for an 8Gb machine, otherwise `prof report` may run out of memory.
 
 High level view:
@@ -20,7 +22,7 @@ Normal view:
 perf report
 ```
 
-There is an unsolved issue that `--call-graph dwarf` does not play well with the `/tmp/perf\*` files generated JITted code which forces one to use the default `fp` unwinder instead. That makes the report less pretty than desired (and breaks libc traces in particular), but it should still have enough information to perform analysis with a trace obtained like that.
+
 
 Current build
 ==
@@ -36,12 +38,19 @@ Tool breakdown
 * 0.5% cmake
 * 0.5% grep
 * 0.5% install
-* 5.8% kernel+other
+* 5.8% other
 
-Mono breakdown
+Mono basic breakdown
 --
-
-
+* 47.3% runtime
+* 9.4% libc
+* 8.8% syscalls
+* 8.6% Microsoft.CodeAnalysis.CSharp.dll.so
+* 4.8% Microsoft.CodeAnalysis.dll.so
+* 3.0% mscorlib.dll.so
+* 2.9% libpthread
+* 0.7% System.Collections.Immutable.dll.so
+* 14.7 JIT + other AOT
 
 Miscellanea
 ==
