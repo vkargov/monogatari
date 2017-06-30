@@ -40,7 +40,7 @@ Tool breakdown
 * 0.5% install
 * 5.8% other
 
-Mono basic breakdown
+Mono basic breakdown (relative %)
 --
 * 47.3% runtime
 * 9.4% libc
@@ -51,6 +51,19 @@ Mono basic breakdown
 * 2.9% libpthread
 * 0.7% System.Collections.Immutable.dll.so
 * 14.7 JIT + other AOT
+
+Mono most taxing functions (w/o children)
+--
+* 2.9% monoeg_g_hash_table_lookup_extended
+* 1.3% mono_method_to_ir
+* 1.1% mono_local_deadce
+* 1.1% mono_metadata_type_hash
+* 0.8% mono_conc_hashtable_lookup
+* 0.8% mono_local_cprop
+* 0.6% mono_generic_inst_equal_full
+* 0.6% jit_info_table_add
+
+TODO: compare runtime data with Instruments output
 
 Miscellanea
 ==
