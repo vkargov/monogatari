@@ -52,7 +52,7 @@ Mono basic breakdown (relative %)
 * 0.7% System.Collections.Immutable.dll.so
 * 14.7 JIT + other AOT
 
-Mono most taxing functions (w/o children)
+Mono most taxing functions (w/o children, relative %)
 --
 * 2.9% monoeg_g_hash_table_lookup_extended
 * 1.3% mono_method_to_ir
