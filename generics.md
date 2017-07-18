@@ -12,4 +12,6 @@ For `Dictionary``2` it will likely be first called during its constructor execut
    83               {
    ...
 ```
-The RGCTX array initially has space for 4 pointers, MRGCTX has space for 6.
+The RGCTX array initially has space for 4 pointers, MRGCTX has space for 6. Relevant counters: "(M)RGCTX num arrays alloced", "(M)RGCTX bytes alloced".
+It is assigned to `class_vtable->runtime_generic_context`.
+The first slot int the array references the next array chunk, see the [generic sharing documentation](http://www.mono-project.com/docs/advanced/runtime/docs/generic-sharing/#mrgctx-lazy-fetch-trampoline).
