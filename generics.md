@@ -20,3 +20,11 @@ The first slot int the array references the next array chunk, see the [generic s
 
 generic template = Type exression before the generics params have been substituted. (?) The template is the same for all instantiations of a class.
 `new T[1] { _item }` => `MONO_TYPE_SZARRAY (T_REF)`
+
+```
+typedef struct {
+	MonoClass *next_subclass;
+	MonoRuntimeGenericContextInfoTemplate *infos; // class templates (type_argc == 0)
+	GSList *method_templates; // method templates
+} MonoRuntimeGenericContextTemplate;
+```
