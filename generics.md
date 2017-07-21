@@ -22,9 +22,17 @@ generic template = Type exression before the generics params have been substitut
 `new T[1] { _item }` => `MONO_TYPE_SZARRAY (T_REF)`
 
 ```
+typedef struct _MonoRuntimeGenericContextInfoTemplate {
+	MonoRgctxInfoType info_type;
+	gpointer data;
+	struct _MonoRuntimeGenericContextInfoTemplate *next;
+} MonoRuntimeGenericContextInfoTemplate;
+
 typedef struct {
 	MonoClass *next_subclass;
 	MonoRuntimeGenericContextInfoTemplate *infos; // class templates (type_argc == 0)
 	GSList *method_templates; // method templates
 } MonoRuntimeGenericContextTemplate;
 ```
+
+
