@@ -15,3 +15,8 @@ For `Dictionary``2` it will likely be first called during its constructor execut
 The RGCTX array initially has space for 4 pointers, MRGCTX has space for 6. Relevant counters: "(M)RGCTX num arrays alloced", "(M)RGCTX bytes alloced".
 It is assigned to `class_vtable->runtime_generic_context`.
 The first slot int the array references the next array chunk, see the [generic sharing documentation](http://www.mono-project.com/docs/advanced/runtime/docs/generic-sharing/#mrgctx-lazy-fetch-trampoline).
+
+## Generic templates
+
+generic template = Type exression before the generics params have been substituted. (?) The template is the same for all instantiations of a class.
+`new T[1] { _item }` => `MONO_TYPE_SZARRAY (T_REF)`
