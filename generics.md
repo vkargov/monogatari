@@ -35,4 +35,10 @@ typedef struct {
 } MonoRuntimeGenericContextTemplate;
 ```
 
-
+## Logical relation of things
+### image
+class ∈ image
+rgctx template ∈ image
+class ↔ rgctx template
+### domain
+rgctx array ∈ domain
