@@ -40,5 +40,9 @@ typedef struct {
 class ∈ image
 rgctx template ∈ image
 class ↔ rgctx template
+class → generic class → container class
 ### domain
 rgctx array ∈ domain
+
+## I don't even
+`new T[1]` => `patch_info->data.rgctx_entry->data->data.klass->byval_arg` = `(MonoType) {type = MONO_TYPE_SZARRAY, data.klass = {name = "T_REF", ...}, ...}`
