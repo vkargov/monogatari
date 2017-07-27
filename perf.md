@@ -140,7 +140,7 @@ diff -ur glibc-2.24/sysdeps/unix/sysv/linux/Makefile ../glibc-2.24/sysdeps/unix/
 Without it the build won't work. Probably need to fix/update the patch for the future versions.
 
 ### Build
-`dpkg-buildpackage ...`
+`$ DEB_BUILD_OPTIONS=nocheck dpkg-buildpackage -j2 -uc -us -b # ironically enough, haven't checked if nocheck works`
 
 Now figure out how to make it as a local install for use only with the runtime...
 
