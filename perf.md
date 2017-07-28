@@ -149,6 +149,10 @@ LD_LIBRARY_PATH=./build-tree/amd64-libc perf record ...
 ```
 In practice, it should fix ~50% of broken stack traces (assuming `mono`'s own stacks aren't broken).
 
+### Superultrahyperline
+LD_LIBRARY_PATH="$MY_LIBC_DIR"/build-tree/amd64-libc MONO_DEBUG=disable_omit_fp perf record -g mono-sgen -O=-aot --jitmap ...
+TODO: does disable_omit_fp affect aot? If it does, awesome, need to rebuild aot with it. If it doesn't, is there an easy way to amend that?
+
 Current build
 ==
 
