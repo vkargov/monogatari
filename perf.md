@@ -142,7 +142,12 @@ Without it the build won't work. Probably need to fix/update the patch for the f
 ### Build
 `$ DEB_BUILD_OPTIONS=nocheck dpkg-buildpackage -j2 -uc -us -b # ironically enough, haven't checked if nocheck works`
 
-Now figure out how to make it as a local install for use only with the runtime...
+### 実行
+To run our thing with a custom libc:
+```
+LD_LIBRARY_PATH=./build-tree/amd64-libc perf record ...
+```
+In practice, it should fix ~50% of broken stack traces (assuming `mono`'s own stacks aren't broken).
 
 Current build
 ==
