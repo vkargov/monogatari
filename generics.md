@@ -1,9 +1,9 @@
 ## Docs
-https://www.mono-project.com/docs/advanced/runtime/docs/generics/
+http://www.mono-project.com/docs/advanced/runtime/docs/generics/
 
-https://www.mono-project.com/docs/advanced/runtime/docs/generic-sharing/
+http://www.mono-project.com/docs/advanced/runtime/docs/generic-sharing/
 
-https://www.mono-project.com/docs/advanced/runtime/docs/gsharedvt/
+http://www.mono-project.com/docs/advanced/runtime/docs/gsharedvt/
 
 ## Lazy fetch.
 Goes through `generic_trampoline_rgctx_lazy_fetch`.
