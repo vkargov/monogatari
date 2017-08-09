@@ -72,14 +72,23 @@ IL_000b: ret
 <table>
 <tr><th>rgctx_fetch_trampoline_rgctx_0</th><th>rgctx_fetch_trampoline_rgctx_1</th></tr>
 <tr><td><pre>
+;; load rgctx ptr from vtable
 ->  0x10079e380 <+0>:  movq   0x38(%rdi), %rax
+;; is the rgctx ptr null?
     0x10079e384 <+4>:  testq  %rax, %rax
+;; if yes, jump to actual trampoline
     0x10079e387 <+7>:  je     0x10079e393
+;; fetch slot
     0x10079e389 <+9>:  movq   0x8(%rax), %rax
+;; is the ptr null?
     0x10079e38d <+13>: testq  %rax, %rax
+;; if yes, jump to actual trampoline
     0x10079e390 <+16>: je     0x10079e393
     0x10079e392 <+18>: retq
+;; move the rgctx pointer to the VTABLE register
+;; (bogus I know, commit pending)
     0x10079e393 <+19>: movq   %rdi, %rdi
+;; jump to the actual trampoline
     0x10079e396 <+22>: jmp    0x100fdf5d4
 </pre></td>
 <td><pre>
