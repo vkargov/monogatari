@@ -26,13 +26,17 @@ IL_000b: ret
 <tr><td>
 <pre>
 00        subq    $0x8, %rsp
+;; ldc.i4.0
 04        xorl    %esi, %esi
+;; newarr    0x1b00007f
 06        movabsq $0x100821170, %rdi
 10        movabsq $0x1007ea44e, %r11
 1a        callq   *%r11
+;; stsfld    0x0a000373
 1d        movq    %rax, %rcx
 20        movabsq $0x100b125e0, %rax
 2a        movq    %rcx, (%rax)
+;; ret
 2d        addq    $0x8, %rsp
 31        retq
 </pre>
