@@ -2,6 +2,18 @@ Actually everything related to generated machine code... not just codegen.
 
 ### Generics
 
+#### System.EmptyArray`1<T>:.cctor
+
+<pre>
+namespace System
+{
+	static class EmptyArray<T>
+	{
+		public static readonly T[] Value = new T [0];
+	}
+}
+</pre>
+
 <pre>
 IL_0000: ldc.i4.0
 IL_0001: newarr    0x1b00007f
