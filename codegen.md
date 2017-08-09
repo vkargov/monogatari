@@ -10,7 +10,7 @@ IL_000b: ret
 </pre>
 
 <table>
-<tr><th>System.EmptyArray`1<char>:.cctor ()</th><th>System.EmptyArray`1<T_REF>:.cctor ()</th></tr>
+<tr><th>System.EmptyArray`1&ltchar&gt:.cctor ()</th><th>System.EmptyArray`1&ltT_REF&gt:.cctor ()</th></tr>
 <tr><td>
 <pre>
 00        subq    $0x8, %rsp
