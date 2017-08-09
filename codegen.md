@@ -2,7 +2,7 @@ Actually everything related to generated machine code... not just codegen.
 
 ### Generics
 
-#### System.EmptyArray`1<T>:.cctor
+#### System.EmptyArray`1\<T\>:.cctor
 
 <pre>
 namespace System
