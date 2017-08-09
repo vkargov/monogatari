@@ -9,9 +9,10 @@ IL_0006: stsfld    0x0a000373
 IL_000b: ret
 </pre>
 
-<table><tr><td>
+<table>
+<tr><th>System.EmptyArray`1<char>:.cctor ()</th><th>System.EmptyArray`1<T_REF>:.cctor ()</th></tr>
+<tr><td>
 <pre>
-System.EmptyArray`1<char>:.cctor ():
 00        subq    $0x8, %rsp
 04        xorl    %esi, %esi
 06        movabsq $0x100821170, %rdi
@@ -25,7 +26,6 @@ System.EmptyArray`1<char>:.cctor ():
 </pre>
 </td><td>
 <pre>
-System.EmptyArray`1<T_REF>:.cctor ():
 00        subq    $0x18, %rsp
 04        movq    %r10, (%rsp)
 08        movq    (%rsp), %rdi
