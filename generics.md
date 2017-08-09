@@ -53,3 +53,7 @@ rgctx array ∈ domain
 
 ## I don't even
 `new T[1]` => `patch_info->data.rgctx_entry->data->data.klass->byval_arg` = `(MonoType) {type = MONO_TYPE_SZARRAY, data.klass = {name = "T_REF", ...}, ...}`
+
+RGCTX is stored in `MONO_ARCH_RGCTX_REG`. On AMD64 it is R10.
+
+(???) So RGCTX keeps class/method parameters + instances of static variables (b.c. they're also duplicated). ?
