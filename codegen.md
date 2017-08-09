@@ -32,19 +32,15 @@ Mono`System.EmptyArray`1<T_REF>:.cctor ():
     0x104cb200e <+62>: callq  *%r11
     0x104cb2011 <+65>: movq   0x8(%rsp), %rcx
     0x104cb2016 <+70>: movq   %rcx, (%rax)
-    <b>
-    0x104cb2019 <+73>: addq   $0x18, %rsp
-    </b>
+    <b>0x104cb2019 <+73>: addq   $0x18, %rsp</b>
     0x104cb201d <+77>: retq
  </pre>
  </td><td>
  <pre>
  Mono`System.EmptyArray`1<T_REF>:.cctor ():
     0x100fdf660 <+0>:  pushq  %rbp
-    <b>
-    0x100fdf661 <+1>:  movq   %rsp, %rbp
-    0x100fdf664 <+4>:  subq   $0x10, %rsp
-    </b>
+    <b>0x100fdf661 <+1>:  movq   %rsp, %rbp
+    0x100fdf664 <+4>:  subq   $0x10, %rsp</b>
     0x100fdf668 <+8>:  movq   %r10, -0x8(%rbp)
     0x100fdf66c <+12>: movq   -0x8(%rbp), %rdi
     0x100fdf670 <+16>: movabsq $0x10079e3c0, %r11
@@ -58,10 +54,8 @@ Mono`System.EmptyArray`1<T_REF>:.cctor ():
     0x100fdf697 <+55>: movabsq $0x10079e380, %r11
     0x100fdf6a1 <+65>: callq  *%r11
     0x100fdf6a4 <+68>: movq   -0x10(%rbp), %rcx
-    0x100fdf6a8 <+72>: movq   %rcx, (%rax)
-    <b>
-    0x100fdf6ab <+75>: leave
-    </b>
+    0x100fdf6a8 <+72>: movq   %rcx, (%rax)    
+    <b>0x100fdf6ab <+75>: leave</b>
     0x100fdf6ac <+76>: retq
 </pre>
 </td></table> 
