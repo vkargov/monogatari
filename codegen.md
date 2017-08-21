@@ -31,7 +31,7 @@ IL_000b: ret
 ;; newarr    0x1b00007f
 06        movabsq $0x100821170, %rdi
 10        movabsq $0x1007ea44e, %r11
-1a        callq   *%r11
+1a        callq   *%r11 ;; newarr (type=rdi)
 ;; stsfld    0x0a000373
 1d        movq    %rax, %rcx
 20        movabsq $0x100b125e0, %rax
@@ -53,7 +53,7 @@ IL_000b: ret
 1c        xorl    %esi, %esi
 ;; newarr    0x1b00007f
 1e        movabsq $0x1007ea44e, %r11
-28        callq   *%r11
+28        callq   *%r11 ;; newarr (type=rdi)
 2b        movq    %rax, 0x8(%rsp)
 ;; %rax = &Value = rgctx_fetch_trampoline_rgctx_0() // slot 0
 ;; the pointers will be different for every different instance.
