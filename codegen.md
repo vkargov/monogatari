@@ -43,6 +43,7 @@ IL_000b: ret
 </pre>
 </td><td>
 <pre>
+;; %r10 = vtable
 00        subq    $0x18, %rsp
 ;; rgctx_fetch_trampoline_rgctx_1() // slot 1
 04        movq    %r10, (%rsp)
@@ -86,6 +87,8 @@ IL_000b: ret
     0x10079e38d <+13>: testq  %rax, %rax
 ;; if yes, jump to actual trampoline
     0x10079e390 <+16>: je     0x10079e393
+;; otherwise return the stored type in %rax
+;; (TODO) So the types in rgctx are just a hash? Since if they're unavailable, we can still initialise them.
     0x10079e392 <+18>: retq
 ;; move the rgctx pointer to the VTABLE register
 ;; (bogus I know, commit pending)
